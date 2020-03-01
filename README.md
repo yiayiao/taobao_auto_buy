@@ -27,7 +27,7 @@ Or
 
    内置chrome79的chromedriver, 如果你的chrome是79, 无需手动下载chromedriver
    
-   版本不是79的, 需要手动下载对应版本的chromedriver, 下载的chromedriver需要按照以下方式命名
+   版本不是79的, 需要手动下载对应版本的chromedriver, 下载的chromedriver需要按照以下方式命名, 并把命名后的文件放入drivers/
      > Windows
      
        chromedriver_win.exe    
