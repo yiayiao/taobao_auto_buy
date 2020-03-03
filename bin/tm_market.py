@@ -1,4 +1,6 @@
 from lib.base import *
+from lib.utils import BenchmarkTimer
+
 class TM_Market(AutoBuyBase):
 
     def __init__(self, target_url, buy_time):
@@ -26,15 +28,16 @@ class TM_Market(AutoBuyBase):
         self._timer(self._buy_time)
         self._logger.info("开始抢购")
 
-        buy_element = WebDriverWait(self._browser, 20).until(EC.element_to_be_clickable((By.ID, "J_LinkBasket")))
-        buy_element.click()
-        #self._click_until_redirect(buy_element, self._browser.current_url)
+        with BenchmarkTimer(self._logger):
+            buy_element = WebDriverWait(self._browser, 20).until(EC.element_to_be_clickable((By.ID, "J_LinkBasket")))
+            buy_element.click()
+            #self._click_until_redirect(buy_element, self._browser.current_url)
 
-        sumit_element = WebDriverWait(self._browser, 20).until(EC.presence_of_element_located((By.XPATH, "//a[@data-tmc='cart' and @class='tm-mcCartBtn']")))
-        sumit_element = WebDriverWait(self._browser, 20).until(EC.element_to_be_clickable((By.XPATH, "//a[@data-tmc='cart' and @class='tm-mcCartBtn']")))
-        self._click_until_new_tab(sumit_element)
+            sumit_element = WebDriverWait(self._browser, 20).until(EC.presence_of_element_located((By.XPATH, "//a[@data-tmc='cart' and @class='tm-mcCartBtn']")))
+            sumit_element = WebDriverWait(self._browser, 20).until(EC.element_to_be_clickable((By.XPATH, "//a[@data-tmc='cart' and @class='tm-mcCartBtn']")))
+            self._click_until_new_tab(sumit_element)
 
-        self._checkout()
+            self._checkout()
 
     def _checkout(self):
 

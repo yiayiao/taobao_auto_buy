@@ -8,8 +8,6 @@ from bin.tb import Taobao
 from bin.tm_market import TM_Market
 from lib.utils import read, welcome
 
-
-
 def main():
 
     parser = argparse.ArgumentParser()
