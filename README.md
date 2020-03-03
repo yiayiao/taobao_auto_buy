@@ -4,7 +4,7 @@
 
 ## Update
 ## 更新
-[2020 03/03] : 更新V2版本, 解决滑块验证问题, 优化代码, 优化抢购速度, 需要使用chrome(版本78以下) [V2](https://github.com/Jesseslco/taobao_auto_buy/tree/alpha)
+[2020 03/03] : 更新V2版本, 解决滑块验证问题, 优化代码, 优化抢购速度, 需要使用chrome(版本78以下) [**V2**](https://github.com/Jesseslco/taobao_auto_buy/tree/alpha)
 
 ## Requirements
 ## 搭建环境
