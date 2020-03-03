@@ -2,14 +2,12 @@
 # taobao_auto_buy
 # 淘宝定时抢购
 
-## Requirements
 ## 搭建环境
 * python3
   * selenium
-* chrome
-  * chromedriver
+* chrome (**版本78以下**)
+  * chromedriveri (对应chrome版本)
   
-## How to use
 ## 使用说明
 1. clone 项目 或者 直接下载zip
 ```
