@@ -154,11 +154,11 @@ class AutoBuyBase(object):
         except TimeoutException as e:
             raise e
 
-    def _wait_until_login(self, browser):
+    def _wait_until_login(self, current_url, browser):
 
         wait = WebDriverWait(browser, 60)
         try:
-            wait.until_not(lambda _browser: _browser.current_url == "https://www.taobao.com")
+            wait.until_not(lambda _browser: _browser.current_url == current_url)
         except TimeoutException as e:
             raise e
 
@@ -193,10 +193,11 @@ class AutoBuyBase(object):
 
         browser = self._config_login_browser()
         browser.get("https://login.taobao.com")
-        # browser.implicitly_wait(20)
-        # current_url = browser.current_url
-        # print(current_url)
-        self._wait_until_login(browser)
+        browser.implicitly_wait(20)
+        current_url = browser.current_url
+        print(current_url)
+        self._logger.info("请扫码")
+        self._wait_until_login(current_url, browser)
 
         # self._wait_redirect(current_url, browser)
         # browser.find_element_by_link_text("亲，请登录").click()
