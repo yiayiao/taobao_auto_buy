@@ -92,7 +92,7 @@ class AutoBuyBase(object):
         if os_type == "Linux":
             return os.path.join(driver_dir, "chromedriver_linux")
         elif os_type == "Darwin":
-            return os.path.join((driver_dir, "chromedriver_mac"))
+            return os.path.join(driver_dir, "chromedriver_mac")
         elif os_type == "Windows":
             return os.path.join(driver_dir, "chromedriver_win.exe")
         return None
