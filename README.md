@@ -2,6 +2,9 @@
 # taobao_auto_buy
 # 淘宝定时抢购
 
+##说明
+V2版本因驱动问题使用chrome78以下, V2禁用图片渲染, 优化了代码, 加快了抢购速度 
+
 ## 搭建环境
 * python3
   * selenium
