@@ -1,5 +1,5 @@
 [![HitCount](http://hits.dwyl.io/Jesseslco/taobao_auto_buy.svg)](http://github.com/Jesseslco/taobao_auto_buy)
-# taobao_auto_buy
+# taobao_auto_buy [**V2**]
 # 淘宝定时抢购
 
 ## 说明
