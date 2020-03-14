@@ -27,8 +27,6 @@ class BenchmarkTimer(object):
         msg = "took {time} seconds to complete"
         self._logger.info(msg.format(time=runtime))
 
-
-
 def test():
     a = 1
     for i in range(10000):
