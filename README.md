@@ -64,3 +64,5 @@ Or
 * 建议在抢购时间前10分钟, 启动脚本, 否则时间过长会登陆超时.
 * 仅供学习交流使用, 勿商业用途
 * 有任何使用问题, 请raise a issue
+
+Thanks for Jetbran supports for this project
