@@ -25,7 +25,8 @@ def main():
         config = read(config_path)
         welcome("Config Json 参数读取成功", config["target_url"], config["buy_time"])
 
-    if "chaoshi" in config["target_url"]:
+# https://detail.tmall.com/item.htm?spm=a1z10.5-b-s.w4011-17811456171.51.43b33ea519zjJC&id=563886224451&rn=754cadc3b309e966c75961c21c7d46fe&abbucket=7&skuId=3936939087284
+    if "tmail" in config["target_url"]:
         chaoshi = TM_Market(**config)
         chaoshi.start()
     else:
