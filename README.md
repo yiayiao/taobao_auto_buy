@@ -49,7 +49,7 @@ Or
 ```
 {
     "target_url": "https://detail.tmall.com/item.htm?spm=a230r.1.14.20.149872d0N6ViJZ&id=598418850958&ns=1&abbucket=9",
-    "buy_time": "2020-02-08 03:42:00"
+    "buy_time": "2020-02-08 03:42:00 1"
 }
 ```
 **target_url**是商品链接
