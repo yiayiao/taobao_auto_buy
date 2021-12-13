@@ -52,7 +52,7 @@ class AutoBuyBase(object):
     def _validate_time(self, time):
 
         try:
-            datetime.strptime(time, "%Y-%m-%d %H:%M:%S")
+            datetime.strptime(time, "%Y-%m-%d %H:%M:%S %f")
         except:
             raise InvalidInputTime()
 
@@ -87,9 +87,19 @@ class AutoBuyBase(object):
 
         opts = ChromeOptions()
         opts.add_experimental_option("detach", True)
+        opts.add_experimental_option("excludeSwitches", ["enable-automation"])
+        opts.add_experimental_option('useAutomationExtension', False)
         driver_dir = self._get_driver_dir()
         self._logger.info(f"using {driver_dir}")
-        return Chrome(driver_dir, chrome_options=opts)
+        driver = Chrome(driver_dir, chrome_options=opts)
+        driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
+            "source": """
+                Object.defineProperty(navigator, 'webdriver', {
+                get: () => undefined
+                })
+            """
+        })
+        return driver
 
     def _wait_redirect(self, current_url):
 
@@ -127,7 +137,7 @@ class AutoBuyBase(object):
 
     def _timer(self, buy_time):
 
-        buy_time_raw = datetime.strptime(buy_time, "%Y-%m-%d %H:%M:%S")
+        buy_time_raw = datetime.strptime(buy_time, "%Y-%m-%d %H:%M:%S %f")
         while datetime.now() < buy_time_raw:
             self._timer_printer(buy_time_raw)
 
