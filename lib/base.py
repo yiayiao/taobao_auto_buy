@@ -76,10 +76,10 @@ class AutoBuyBase(object):
 
     def _config_browser(self):
         opts = ChromeOptions()
-        # opts.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
-        opts.add_experimental_option("detach", True)
-        opts.add_experimental_option("excludeSwitches", ["enable-automation"])
-        opts.add_experimental_option('useAutomationExtension', False)
+        opts.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
+        # opts.add_experimental_option("detach", True)
+        # opts.add_experimental_option("excludeSwitches", ["enable-automation"])
+        # opts.add_experimental_option('useAutomationExtension', False)
         driver_dir = self._get_driver_dir()
         self._logger.info(f"using {driver_dir}")
         driver = Chrome(driver_dir, chrome_options=opts)
@@ -127,5 +127,4 @@ class AutoBuyBase(object):
             self._timer_printer(buy_time_raw)
 
     def _timer_printer(self, buy_time):
-
         print(f"{buy_time - datetime.now()}", end="\r")
