@@ -1,4 +1,3 @@
-[![HitCount](http://hits.dwyl.io/Jesseslco/taobao_auto_buy.svg)](http://github.com/Jesseslco/taobao_auto_buy)
 # taobao_auto_buy
 # 淘宝定时抢购
 
@@ -38,6 +37,9 @@ Or
      > Mac
      
        chromedriver_mac
+       
+5. 启动chrome，参数：
+"C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --user-data-dir="C:\logs\selenum\AutomationProfile" www.tabao.com
      
 5. 命令行带参数运行 或者 修改config/config.json后运行
    * 命令行参数运行
